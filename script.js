@@ -1,7 +1,10 @@
+const jokeContainer = document.getElementById("jokeContainer");
 const button = document.getElementById("jokeBtn");
 const category = document.getElementById("jokeCategory");
 const setup = document.getElementById("jokeSetup");
 const delivery = document.getElementById("jokeDelivery");
+
+
 
 
 //Click event, so when the button is clicked, the function inside the code runs
@@ -9,6 +12,10 @@ button.addEventListener("click", function(){
 
   //Prevents button spamming
   button.disabled = true;
+
+  //Fade animation for joke
+  jokeContainer.classList.remove("show");
+  jokeContainer.classList.add("fade");
 
   //Shows loading message
   setup.textContent = "Loading joke..."
@@ -50,6 +57,10 @@ button.addEventListener("click", function(){
       setup.textContent = "Setup: " + data.setup;
       delivery.textContent = "Delivery: " + data.delivery;
     }
+
+      jokeContainer.classList.add("show");
+      
+      button.disabled = false;
     
   });
 })

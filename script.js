@@ -7,6 +7,9 @@ const delivery = document.getElementById("jokeDelivery");
 //Click event, so when the button is clicked, the function inside the code runs
 button.addEventListener("click", function(){
 
+  //Prevents button spamming
+  button.disabled = true;
+
   //Shows loading message
   setup.textContent = "Loading joke..."
   delivery.textContent = "";

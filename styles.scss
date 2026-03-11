@@ -8,12 +8,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 main {
   background: white;
   padding: 2rem;
+  margin-top: 20px;
   border-radius: 10px;
   width: 400px;
   text-align: center;
@@ -21,14 +22,19 @@ main {
 }
 
 button {
+  margin-top: 15px;
   background: $primary-color;
   color: white;
   border: none;
-  padding: 10px 18px;
+  padding: 10px 20px;
   border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
   margin-bottom: 20px;
+}
+
+button:hover {
+  background: #4338ca;
 }
 
 button:disabled {

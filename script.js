@@ -65,4 +65,14 @@ button.addEventListener("click", function(){
       button.disabled = false;
     
   });
-})
+});
+
+saveBtn.addEventListener("click", function(){
+  let jokeText = setup.textContent + " " + delivery.textContent;
+
+  let newJoke = document.createElement("li");
+
+  newJoke.textContent = jokeText;
+  
+  savedJokesList.appendChild(newJoke);
+});

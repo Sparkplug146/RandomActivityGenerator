@@ -5,7 +5,21 @@ const setup = document.getElementById("jokeSetup");
 const delivery = document.getElementById("jokeDelivery");
 const saveBtn = document.getElementById("saveBtn");
 const savedJokesList = document.getElementById("savedJokes");
+let savedJokes = [];
+let storedJokes = localStorage.getItem("jokes");
 
+if(storedJokes){
+  savedJokes = JSON.parse(storedJokes);
+  
+  savedJokes.forEach(function(joke){
+
+    let li = document.createElement("li");
+    li.textContent = joke;
+
+    savedJokesList.appendChild(li);
+
+  });
+}
 
 
 
@@ -75,4 +89,8 @@ saveBtn.addEventListener("click", function(){
   newJoke.textContent = jokeText;
   
   savedJokesList.appendChild(newJoke);
+
+  savedJokes.push(jokeText);
+
+  localStorage.setItem("jokes", JSON.stringify(savedJokes));
 });
